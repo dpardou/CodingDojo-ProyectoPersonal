@@ -1,0 +1,40 @@
+
+### CREATE
+POST http://localhost:8000/api/parkingLots HTTP/1.1
+content-type: application/json
+//x-token: 
+
+{
+    "userName": "dpardiola",
+    "calle": "Calle xyz",
+    "numero": 98666,
+    "comuna": "Santiago",
+    "lat": "-33.43345345",
+    "long": "-70.7657675"
+}
+
+###GETALL
+GET http://localhost:8000/api/parkingLots/ HTTP/1.1
+content-type: application/json
+//x-token: 
+
+###GETBYID
+GET http://localhost:8000/api/parkingLots/61bbf036c03b82d61cdc525e HTTP/1.1
+content-type: application/json
+//x-token: 
+
+### UPDATE
+PUT http://localhost:8000/api/parkingLots/61bbf039c03b82d61cdc5261 HTTP/1.1
+content-type: application/json
+
+{
+    "userName": "admin",
+    "calle": "avenida xyz",
+    "numero": 987
+}
+
+
+### DELETE
+DELETE http://localhost:8000/api/parkingLots/61bbf036c03b82d61cdc525e HTTP/1.1
+content-type: application/json
+//x-token: 
