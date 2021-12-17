@@ -21,11 +21,11 @@ const parkingLotSchema = new mongoose.Schema({
       required: [true, 'La comuna es requerid'],
     },
     lat: {
-      type: String,
+      type: Number,
       required: [true, 'La coordenada latitud es requerida'],
     },
     long: {
-      type: String,
+      type: Number,
       required: [true, 'La coordenada longitud es requerida'],
     },
 }, { timestamps: { createdAt: true, updatedAt: true }});
