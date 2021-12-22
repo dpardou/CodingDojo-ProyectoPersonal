@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const UserSchema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
         required: [true, 'Debe ingresar el nombre del usuario'],
-        maxlength: [50, 'Su largo no debe ser mayor a 50']
+        maxlength: [50, 'Su largo no debe ser mayor a 50'],
+        //unique: true,
     },
     email: {
         type: String,
         required: [true, 'Debe ingresar el email del usuario'],
-        validate: [/^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/, 'El email no es válido']
+        validate: [/^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/, 'El email no es válido'],
+       // unique: true,
     },
     password: {
         type: String,
@@ -38,5 +41,6 @@ UserSchema.pre('save', function(next){
         });
 });
 
+UserSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico porfavor' });
 const User = mongoose.model('User', UserSchema);
 module.exports = User;

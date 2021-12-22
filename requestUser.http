@@ -3,8 +3,8 @@ POST http://localhost:8000/api/register HTTP/1.1
 content-type: application/json
 
 {
-    "name": "pardiola2",
-    "email": "pardiola@mail.cl",
+    "username": "dpardou",
+    "email": "dpardou@mail.cl",
     "password": "123abc*",
     "confirmPassword": "123abc*"
 
@@ -15,8 +15,8 @@ POST http://localhost:8000/api/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "pardiola2",
-    "password": "123abc*"
+    "username": "pardiola",
+    "password": "123456"
 
 }
 
@@ -35,8 +35,7 @@ PUT http://localhost:8000/api/users/61bbfdec4b1b024ad8193294 HTTP/1.1
 content-type: application/json
 usertoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYmMwNzBhNDc4Y2ZhYWU4ZGVjYTQ4NSIsIm5hbWUiOiJwYXJkaW9sYTIiLCJlbWFpbCI6InBhcmRpb2xhQG1haWwuY2wiLCJpYXQiOjE2Mzk3MTMwNDh9.Sk_HIV5wQs34UPoRPHzZv7BiFfUya5i7ccHuFwyTdk0
 
-
 {
-    "name": "pardiola22"
+    "name": "pardiola2222"
 
 }
