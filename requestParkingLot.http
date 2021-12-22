@@ -5,12 +5,12 @@ content-type: application/json
 //x-token: 
 
 {
-    "userName": "dpardiola",
-    "calle": "Calle xyz",
-    "numero": 98666,
+    "userName": "NewProject",
+    "calle": "Teatinos",
+    "numero":690,
     "comuna": "Santiago",
-    "lat": "-33.43345345",
-    "long": "-70.7657675"
+    "lat": "-33.435604661151714",
+    "long": "-70.65610078622993"
 }
 
 ###GETALL

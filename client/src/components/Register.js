@@ -19,7 +19,7 @@ export default function Register({ setShowRegister }) {
     };
 
     try {
-      await axios.post("/register", newUser);
+      await axios.post("http://localhost:8000/api/register", newUser);
       setError(false);
       setSuccess(true);
     } catch (err) {
