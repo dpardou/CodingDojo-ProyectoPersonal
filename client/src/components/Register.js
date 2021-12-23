@@ -1,7 +1,9 @@
-import { Cancel, Room } from "@material-ui/icons";
+import { Cancel } from "@material-ui/icons";
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import axios from "axios";
 import { useRef, useState } from "react";
 import "./register.css";
+import logo from './miEspacioApp.png'
 
 export default function Register({ setShowRegister }) {
   const [success, setSuccess] = useState(false);
@@ -29,9 +31,10 @@ export default function Register({ setShowRegister }) {
   return (
     <div className="registerContainer">
       <div className="logo">
-        <Room className="logoIcon" />
-        <span>miEspacio</span>
+        <PersonAddIcon className="logoIcon" />
+        <span>Registro Usuario</span>
       </div>
+      <img className="logoME" src={logo} alt="logo"></img>
       <form onSubmit={handleSubmit}>
         <input type="text" autoFocus placeholder="username" required ref={usernameRef} />
         <input type="email" placeholder="email" required ref={emailRef} />

@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 
+.logoME {
+  width: 150px;
+  height: auto;
+
+}
+
 .logo {
   display: flex;
   align-items: center;

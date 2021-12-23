@@ -4,15 +4,17 @@ POST http://localhost:8000/api/parkingLots HTTP/1.1
 content-type: application/json
 //x-token: 
 
+[
 {
     "userName": "NewProject",
     "calle": "Teatinos",
     "numero":690,
     "comuna": "Santiago",
+    "cantidad": 2,
     "lat": "-33.435604661151714",
     "long": "-70.65610078622993"
 }
-
+]
 ###GETALL
 GET http://localhost:8000/api/parkingLots/ HTTP/1.1
 content-type: application/json
