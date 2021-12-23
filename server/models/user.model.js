@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-UserSchema.virtual('confirmPassword')
+/*UserSchema.virtual('confirmPassword')
     .get( () => this._confirmPassword )
     .set( value => this._confirmPassword = value);
 
@@ -31,7 +31,7 @@ UserSchema.pre('validate', function(next) {
         this.invalidate('confirmPassword', 'Las claves no son iguales')
     }
     next();
-});
+});*/
 
 UserSchema.pre('save', function(next){
     bcrypt.hash(this.password, 10)

@@ -3,10 +3,10 @@ POST http://localhost:8000/api/register HTTP/1.1
 content-type: application/json
 
 {
-    "username": "dpardou",
-    "email": "dpardou@mail.cl",
-    "password": "123abc*",
-    "confirmPassword": "123abc*"
+    "username": "NewProject",
+    "email": "np@mail.cl",
+    "password": "123456",
+    "confirmPassword": "123456"
 
 }
 

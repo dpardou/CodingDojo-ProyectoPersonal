@@ -33,12 +33,13 @@ export default function Register({ setShowRegister }) {
         <span>miEspacio</span>
       </div>
       <form onSubmit={handleSubmit}>
-        <input autoFocus placeholder="username" ref={usernameRef} />
-        <input type="email" placeholder="email" ref={emailRef} />
+        <input type="text" autoFocus placeholder="username" required ref={usernameRef} />
+        <input type="email" placeholder="email" required ref={emailRef} />
         <input
           type="password"
           min="6"
           placeholder="password"
+          required
           ref={passwordRef}
         />
         <button className="registerBtn" type="submit">

@@ -15,8 +15,9 @@ function App() {
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
   const [calle, setCalle] = useState(null);
-  const [numero, setNumero] = useState(null);
-  const [comuna, setComuna] = useState(0);
+  const [numero, setNumero] = useState(0);
+  const [comuna, setComuna] = useState(null);
+  const [cantidad, setCantidad] = useState(0);
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
@@ -47,13 +48,14 @@ function App() {
       calle,
       numero,
       comuna,
+      cantidad,
       lat: newPlace.lat,
       long: newPlace.long,
     };
 
     try {
       const res = await axios.post("http://localhost:8000/api/parkingLots", newPark);
-      setParks([...parks, res.data]);
+      setParks([...parks, res.data.data]);
       setNewPlace(null);
     } catch (err) {
       console.log(err);
@@ -126,6 +128,8 @@ function App() {
                 <p className="direc">{p.calle}</p>
                 <p className="direc">{p.numero}</p>
                 <p className="direc">{p.comuna}</p>
+                <label>Cantidad Estacionamientos Habilitados</label>
+                <p className="direc">{p.cantidad}</p>
                 <label>Registrado por</label>
                 <span className="username"> <b>{p.userName}</b></span>
               </div>
@@ -177,6 +181,12 @@ function App() {
                     autoFocus
                     onChange={(e) => setComuna(e.target.value)}
                   />
+                  <label>Cantidad Estacionamientos Disponibles</label>
+                  <input
+                    placeholder="Ingrese cantidad de estacionamientos disponibles"
+                    autoFocus
+                    onChange={(e) => setCantidad(e.target.value)}
+                  />
                   
                   <button type="submit" className="submitButton">
                     Agregar Estacionamiento
@@ -191,6 +201,7 @@ function App() {
             Logout
           </button>
         ) : (
+          
           <div className="buttons">
             <button className="button login" onClick={() => setShowLogin(true)}>
               Login
