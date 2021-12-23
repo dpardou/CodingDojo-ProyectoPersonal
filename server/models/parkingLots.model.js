@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const parkingLotSchema = new mongoose.Schema({
-    userName: {
+    /*userName: {
         type: String,
         required: [true, 'El nombre de usuario es requerido'],
-    },
+    },*/
     calle: {
       type: String,
       required: [true, 'El nombre de la calle es requerido'],

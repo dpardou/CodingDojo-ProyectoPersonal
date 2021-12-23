@@ -8,10 +8,13 @@ module.exports.register = (req, res) => {
     User.find({$or: [{email: req.body.email }, {username: req.body.username}]})
         .then(data => {
             if(!data || data.length == 0) {
+                
+                
                 User.create(req.body)
                     
                     .then(user => res.status(200).json({ ok: true, message: 'Usuario registrado correctamente', data: user}))
                     .catch(error => {
+                        
                         if(error.name === 'ValidationError'){
                             res.status(200).json({ok: false, message: error.message, error: error})
                         } else{ 

@@ -1,9 +1,11 @@
 const {ParkingLot} = require('../models/parkingLots.model');
 
 module.exports.create = (req, res) => {
+    console.log(req.body)
     ParkingLot.create(req.body)
     .then(data => res.json({ ok: true, message: 'Se agregó el estacionamiento', data: data }))
     .catch(error => {
+        console.log(error)
         if(error.name == 'ValidationError')
             res.status(500).json({ ok: false, message: error.message, error: error });
         else {

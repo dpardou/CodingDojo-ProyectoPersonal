@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const uniqueValidator = require('mongoose-unique-validator');
+//const uniqueValidator = require('mongoose-unique-validator');
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -41,6 +41,6 @@ UserSchema.pre('save', function(next){
         });
 });
 
-UserSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico porfavor' });
+//UserSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico porfavor' });
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
